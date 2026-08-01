@@ -270,8 +270,8 @@ function App() {
       </section>
 
       {/* Legacy Section */}
-      <section id="legacy" style={{ padding: '10rem 3rem', background: 'var(--bg-primary)', position: 'relative' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '8rem', alignItems: 'center' }}>
+      <section id="legacy" className="section-padding" style={{ background: 'var(--bg-primary)', position: 'relative' }}>
+        <div className="legacy-grid" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div>
             <ScrollReveal>
               <h2 className="font-serif" style={{ fontSize: '3.5rem', marginBottom: '2rem', fontWeight: 400, color: 'var(--text-primary)' }}>A Legacy of <span style={{ fontStyle: 'italic', color: 'var(--kalyan-gold)' }}>Trust</span></h2>
