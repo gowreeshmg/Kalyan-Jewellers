@@ -55,7 +55,7 @@ export default function LoadingScreen({ onComplete }) {
       setIsVisible(false);
       document.body.style.overflow = 'auto';
       setTimeout(onComplete, 1000); // Wait for fade out
-    }, 5000);
+    }, 2000);
 
     return () => {
       clearTimeout(timer);
@@ -74,9 +74,14 @@ export default function LoadingScreen({ onComplete }) {
         pointerEvents: isVisible ? 'auto' : 'none'
       }}
     >
-      <div style={{ position: 'absolute', top: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <h1 className="font-serif" style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--kalyan-red)', letterSpacing: '3px', margin: 0, lineHeight: 1 }}>KALYAN</h1>
-        <span style={{ color: 'var(--text-primary)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '4px', marginTop: '12px', fontWeight: 600 }}>Jewellers</span>
+      <div style={{ position: 'absolute', top: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '0' }}>
+        <div style={{ height: '32px', overflow: 'hidden', display: 'flex', alignItems: 'flex-start', marginTop: '5px', marginRight: '-22px', zIndex: 2 }}>
+          <img src="/logo.png" alt="Kalyan Jewellers Logo" style={{ height: '65px', objectFit: 'contain', objectPosition: 'top' }} />
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', zIndex: 1 }}>
+          <h1 className="font-serif" style={{ fontSize: '1.8rem', fontWeight: 'bold', color: 'var(--kalyan-red)', letterSpacing: '3px', margin: 0, lineHeight: 1 }}>KALYAN</h1>
+          <span style={{ color: 'var(--text-primary)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '4px', marginTop: '6px', fontWeight: 600 }}>Jewellers</span>
+        </div>
       </div>
 
       {/* Loading Indicator at Bottom */}

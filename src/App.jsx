@@ -120,9 +120,14 @@ function App() {
         borderBottom: isScrolled ? '1px solid rgba(184, 134, 11, 0.1)' : 'none',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }} onClick={() => scrollToSection('home')}>
-          <h1 className="font-serif" style={{ fontSize: '2.2rem', fontWeight: 'bold', color: 'var(--kalyan-red)', letterSpacing: '3px', margin: 0, lineHeight: 1 }}>KALYAN</h1>
-          <span style={{ color: 'var(--text-primary)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '4px', marginTop: '12px', fontWeight: 600 }}>Jewellers</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0', cursor: 'pointer', marginLeft: '-1.5rem' }} onClick={() => scrollToSection('home')}>
+          <div style={{ height: '40px', overflow: 'hidden', display: 'flex', alignItems: 'flex-start', marginTop: '6px', marginRight: '-26px', zIndex: 2 }}>
+            <img src="/logo.png" alt="Kalyan Jewellers Logo" style={{ height: '80px', objectFit: 'contain', objectPosition: 'top' }} />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 1 }}>
+            <h1 className="font-serif" style={{ fontSize: '2.2rem', fontWeight: 'bold', color: 'var(--kalyan-red)', letterSpacing: '3px', margin: 0, lineHeight: 1 }}>KALYAN</h1>
+            <span style={{ color: 'var(--text-primary)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '4px', marginTop: '8px', fontWeight: 600 }}>Jewellers</span>
+          </div>
         </div>
         
         <div style={{ display: 'flex', gap: '3rem', alignItems: 'center' }}>
