@@ -139,9 +139,15 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 .gooey-input:not(.expanded) { pointer-events: none; }
 .gooey-bubble-surface { display: flex; height: 40px; width: 40px; align-items: center; justify-content: center; border-radius: 9999px; background-color: var(--kalyan-gold); color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
 
-.product-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2.5rem; } 
-@media (min-width: 640px) { .product-grid { grid-template-columns: repeat(2, 1fr); } } 
+.product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; } 
+@media (min-width: 640px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; } } 
 @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* Product Cards */
+.product-image-container { height: 350px; position: relative; overflow: hidden; background: #fff; }
+.product-info { padding: 2rem; text-align: center; background: #fff; }
+.product-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); }
+.product-price { color: var(--kalyan-red); font-size: 1.2rem; font-weight: 500; letter-spacing: 1px; }
 
 /* Responsive Navbar & Logo */
 .nav-container { padding: 1.5rem 3rem; }
@@ -177,8 +183,13 @@ h1, h2, h3, h4, h5, h6, .font-serif {
   .mobile-logo { display: flex !important; }
 
   .hero-section { flex-direction: column; height: auto !important; min-height: 100vh; padding-top: 80px; }
-  .hero-content { flex: none; padding: 3rem 1.5rem; text-align: center; align-items: center; order: 2; }
+  .hero-content { flex: none; padding: 3rem 1.5rem; text-align: center; align-items: center; order: 2; overflow: hidden; }
   .hero-image { flex: none; height: 40vh; order: 1; }
-  .hero-title { font-size: 3.5rem; margin-bottom: 1rem; }
+  .hero-title { font-size: 3rem; margin-bottom: 1rem; }
   .hero-gradient { background: linear-gradient(to top, var(--bg-secondary) 0%, transparent 40%); }
+
+  .product-image-container { height: 180px; }
+  .product-info { padding: 1rem 0.5rem; }
+  .product-title { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .product-price { font-size: 0.95rem; }
 }

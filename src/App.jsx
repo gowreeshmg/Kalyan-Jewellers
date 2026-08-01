@@ -365,7 +365,7 @@ function App() {
                     whileHover="hover"
                     initial="initial"
                   >
-                    <div style={{ position: 'relative', height: '350px', overflow: 'hidden', background: '#fff' }}>
+                    <div className="product-image-container">
                       <motion.img 
                         src={product.img} 
                         alt={product.name} 
@@ -386,9 +386,9 @@ function App() {
                          <button className="btn-outline" onClick={(e) => { e.stopPropagation(); addToCart(product); }}>Add to Cart</button>
                       </motion.div>
                     </div>
-                    <div style={{ padding: '2rem', textAlign: 'center', background: '#fff' }}>
-                      <h3 className="font-serif" style={{ fontSize: '1.3rem', fontWeight: 600, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>{product.name}</h3>
-                      <p style={{ color: 'var(--kalyan-red)', fontSize: '1.2rem', fontWeight: 500, letterSpacing: '1px' }}>{product.price}</p>
+                    <div className="product-info">
+                      <h3 className="font-serif product-title">{product.name}</h3>
+                      <p className="product-price">{product.price}</p>
                     </div>
                   </TiltCard>
                 </motion.div>
