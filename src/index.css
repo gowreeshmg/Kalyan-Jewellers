@@ -163,9 +163,22 @@ h1, h2, h3, h4, h5, h6, .font-serif {
   letter-spacing: 3px; margin-top: 4px; font-weight: 600;
 }
 
+/* Hero Section */
+.hero-section { display: flex; flex-direction: row; }
+.hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; z-index: 10; }
+.hero-image { flex: 1; position: relative; overflow: hidden; }
+.hero-title { font-size: clamp(4rem, 6vw, 6rem); line-height: 1.1; margin-bottom: 2rem; }
+.hero-gradient { background: linear-gradient(to right, var(--bg-secondary) 0%, transparent 20%); }
+
 @media (max-width: 768px) {
   .nav-container { padding: 1rem 1.5rem !important; }
   .nav-container.scrolled { padding: 0.75rem 1.5rem !important; }
   .desktop-logo { display: none !important; }
   .mobile-logo { display: flex !important; }
+
+  .hero-section { flex-direction: column; height: auto !important; min-height: 100vh; padding-top: 80px; }
+  .hero-content { flex: none; padding: 3rem 1.5rem; text-align: center; align-items: center; order: 2; }
+  .hero-image { flex: none; height: 40vh; order: 1; }
+  .hero-title { font-size: 3.5rem; margin-bottom: 1rem; }
+  .hero-gradient { background: linear-gradient(to top, var(--bg-secondary) 0%, transparent 40%); }
 }

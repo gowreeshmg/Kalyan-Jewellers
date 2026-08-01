@@ -217,10 +217,10 @@ function App() {
       </AnimatePresence>
 
       {/* Clean & Elegant Split Hero Section */}
-      <section id="home" style={{ position: 'relative', height: '100vh', display: 'flex', background: 'var(--bg-secondary)' }}>
+      <section id="home" className="hero-section" style={{ position: 'relative', height: '100vh', background: 'var(--bg-secondary)' }}>
         
         {/* Left Typography Side */}
-        <div style={{ flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 8%', zIndex: 10 }}>
+        <div className="hero-content">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}
             style={{ color: 'var(--kalyan-gold)', letterSpacing: '6px', textTransform: 'uppercase', fontSize: '1rem', marginBottom: '1.5rem', fontWeight: 600 }}
@@ -230,8 +230,8 @@ function App() {
           
           <motion.h1 
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.2, delay: 0.4 }}
-            className="font-serif" 
-            style={{ color: 'var(--text-primary)', fontSize: 'clamp(4rem, 6vw, 6rem)', fontWeight: 400, lineHeight: 1.1, marginBottom: '2rem' }}
+            className="font-serif hero-title" 
+            style={{ color: 'var(--text-primary)', fontWeight: 400 }}
           >
             Embrace <br/>
             <span style={{ fontStyle: 'italic', color: 'var(--kalyan-gold)' }}>Timeless</span><br/>
@@ -254,8 +254,8 @@ function App() {
 
         {/* Right Image Side */}
         <motion.div 
+          className="hero-image"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}
-          style={{ flex: '1', position: 'relative', overflow: 'hidden' }}
         >
           <motion.img 
             src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=2000&auto=format&fit=crop" 
@@ -264,7 +264,7 @@ function App() {
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, var(--bg-secondary) 0%, transparent 20%)' }} />
+          <div className="hero-gradient" style={{ position: 'absolute', inset: 0 }} />
         </motion.div>
 
       </section>
