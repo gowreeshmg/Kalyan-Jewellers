@@ -142,3 +142,30 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 .product-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2.5rem; } 
 @media (min-width: 640px) { .product-grid { grid-template-columns: repeat(2, 1fr); } } 
 @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* Responsive Navbar & Logo */
+.nav-container { padding: 1.5rem 3rem; }
+.nav-container.scrolled { padding: 1rem 3rem; }
+
+.mobile-logo { display: none; align-items: center; gap: 0.75rem; }
+.mobile-logo img {
+  height: 40px; width: 40px; border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(138, 18, 46, 0.3);
+  object-fit: cover;
+}
+.mobile-logo-text { display: flex; flex-direction: column; justify-content: center; }
+.mobile-logo-text h1 {
+  font-family: serif; font-size: 1.4rem; font-weight: bold;
+  color: var(--kalyan-red); letter-spacing: 2px; margin: 0; line-height: 1;
+}
+.mobile-logo-text span {
+  color: var(--text-primary); font-size: 0.55rem; text-transform: uppercase;
+  letter-spacing: 3px; margin-top: 4px; font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .nav-container { padding: 1rem 1.5rem !important; }
+  .nav-container.scrolled { padding: 0.75rem 1.5rem !important; }
+  .desktop-logo { display: none !important; }
+  .mobile-logo { display: flex !important; }
+}

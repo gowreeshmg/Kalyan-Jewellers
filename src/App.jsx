@@ -112,21 +112,30 @@ function App() {
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
 
         {/* Navigation */}
-      <nav style={{
+      <nav className={`nav-container ${isScrolled ? 'scrolled' : ''}`} style={{
         position: 'fixed', top: 0, width: '100%', zIndex: 100, transition: 'all 0.4s ease',
-        padding: isScrolled ? '1rem 3rem' : '1.5rem 3rem',
         background: isScrolled ? 'rgba(253, 251, 247, 0.95)' : 'transparent',
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
         borderBottom: isScrolled ? '1px solid rgba(184, 134, 11, 0.1)' : 'none',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0', cursor: 'pointer', marginLeft: '-1.5rem' }} onClick={() => scrollToSection('home')}>
+        {/* Desktop Logo */}
+        <div className="desktop-logo" style={{ display: 'flex', alignItems: 'center', gap: '0', cursor: 'pointer', marginLeft: '-1.5rem' }} onClick={() => scrollToSection('home')}>
           <div style={{ height: '40px', overflow: 'hidden', display: 'flex', alignItems: 'flex-start', marginTop: '6px', marginRight: '-26px', zIndex: 2 }}>
             <img src="/logo.png" alt="Kalyan Jewellers Logo" style={{ height: '80px', objectFit: 'contain', objectPosition: 'top' }} />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 1 }}>
             <h1 className="font-serif" style={{ fontSize: '2.2rem', fontWeight: 'bold', color: 'var(--kalyan-red)', letterSpacing: '3px', margin: 0, lineHeight: 1 }}>KALYAN</h1>
             <span style={{ color: 'var(--text-primary)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '4px', marginTop: '8px', fontWeight: 600 }}>Jewellers</span>
+          </div>
+        </div>
+
+        {/* Mobile Logo */}
+        <div className="mobile-logo" onClick={() => scrollToSection('home')} style={{ cursor: 'pointer' }}>
+          <img src="/app-icon.jpg" alt="Kalyan App Icon" />
+          <div className="mobile-logo-text">
+            <h1>KALYAN</h1>
+            <span>Jewellers</span>
           </div>
         </div>
         
