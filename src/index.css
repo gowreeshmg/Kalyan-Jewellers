@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  --kalyan-gold: #B8860B; /* Darker, richer gold */
+  --kalyan-gold-light: #D4AF37;
+  --kalyan-red: #A91C22; /* Classic Kalyan maroon */
+  --bg-primary: #FDFBF7; /* Soft, warm cream to reduce brightness */
+  --bg-secondary: #F4EFE6; /* Slightly deeper cream for contrast */
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1105; /* Deep espresso black for sharp contrast */
+  --text-secondary: #5C554B;
+  --border-color: rgba(184, 134, 11, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.glass {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--kalyan-gold), #8A6300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: var(--kalyan-red);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  border: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(169, 28, 34, 0.2);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.btn-primary:hover::after {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(169, 28, 34, 0.3);
+  background: #8e151a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--kalyan-gold);
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover, .btn-outline.active {
+  background: var(--kalyan-gold);
+  color: #fff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--kalyan-gold);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8A6300;
+}
+
+.search-input {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  border-radius: 2px;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+  background: #fff;
+  transition: border-color 0.3s;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.search-input:focus {
+  border-color: var(--kalyan-gold);
+}
+
+.nav-flip-text { font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-primary); }
+.nav-flip-text-hover { color: var(--kalyan-red); }
+
+.gooey-trigger { display: flex; height: 40px; width: 100%; cursor: pointer; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 0 16px; font-size: 0.875rem; font-weight: 500; outline: none; background-color: var(--kalyan-gold); color: white; border: none; transition: all 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+.gooey-trigger:focus-visible { box-shadow: 0 0 0 2px white, 0 0 0 4px var(--kalyan-gold); }
+.gooey-input { height: 100%; min-width: 0; flex: 1; background: transparent; font-size: 0.875rem; color: white; outline: none; border: none; }
+.gooey-input::placeholder { color: rgba(255, 255, 255, 0.7); }
+.gooey-input:not(.expanded) { pointer-events: none; }
+.gooey-bubble-surface { display: flex; height: 40px; width: 40px; align-items: center; justify-content: center; border-radius: 9999px; background-color: var(--kalyan-gold); color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+
+.product-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2.5rem; } 
+@media (min-width: 640px) { .product-grid { grid-template-columns: repeat(2, 1fr); } } 
+@media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
