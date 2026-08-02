@@ -55,7 +55,7 @@ export default function LoadingScreen({ onComplete }) {
       setIsVisible(false);
       document.body.style.overflow = 'auto';
       setTimeout(onComplete, 1000); // Wait for fade out
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearTimeout(timer);
