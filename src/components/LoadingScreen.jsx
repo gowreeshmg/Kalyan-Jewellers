@@ -64,51 +64,74 @@ export default function LoadingScreen({ onComplete }) {
   }, [onComplete]);
 
   return (
-    <motion.div 
-      initial={{ opacity: 1 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
-      style={{
-        position: 'fixed', inset: 0, zIndex: 9999, background: 'var(--bg-primary)',
-        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-        pointerEvents: isVisible ? 'auto' : 'none'
-      }}
-    >
-      <div style={{ position: 'absolute', top: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '0' }}>
-        <div style={{ height: '32px', overflow: 'hidden', display: 'flex', alignItems: 'flex-start', marginTop: '5px', marginRight: '-22px', zIndex: 2 }}>
-          <img src="/logo.png" alt="Kalyan Jewellers Logo" style={{ height: '65px', objectFit: 'contain', objectPosition: 'top' }} />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', zIndex: 1 }}>
-          <h1 className="font-serif" style={{ fontSize: '1.8rem', fontWeight: 'bold', color: 'var(--kalyan-red)', letterSpacing: '3px', margin: 0, lineHeight: 1 }}>KALYAN</h1>
-          <span style={{ color: 'var(--text-primary)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '4px', marginTop: '6px', fontWeight: 600 }}>Jewellers</span>
-        </div>
-      </div>
-
-      {/* Loading Indicator at Bottom */}
-      <div style={{ position: 'absolute', bottom: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', zIndex: 10 }}>
-        <motion.div 
-          animate={{ rotate: 360 }} 
-          transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-          style={{ width: '32px', height: '32px', border: '3px solid rgba(139,0,0,0.2)', borderTop: '3px solid var(--kalyan-red)', borderRadius: '50%' }}
-        />
-        <span style={{ fontFamily: 'serif', fontSize: '1rem', color: 'var(--kalyan-red)', letterSpacing: '2px', textTransform: 'uppercase' }}>Loading Experience...</span>
-      </div>
-
-      <div style={{ width: '100vw', overflow: 'hidden', padding: '2rem 0', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-        <VelocityText baseVelocity={-2}>
-          <span style={{ fontSize: '4rem', fontFamily: 'serif', color: 'var(--kalyan-gold)', fontStyle: 'italic' }}>Curated Masterpieces</span>
-          <img src="/assets/model_bridal_1785599341489.png" alt="Bridal Model" style={{ height: '300px', width: '250px', objectFit: 'cover', borderRadius: '4px' }} />
-          <span style={{ fontSize: '4rem', fontFamily: 'serif', color: 'var(--kalyan-red)' }}>A Legacy of Trust</span>
-          <img src="/assets/model_saree_1785599364258.png" alt="Saree Model" style={{ height: '300px', width: '250px', objectFit: 'cover', borderRadius: '4px' }} />
-        </VelocityText>
+    <>
+      <style>{`
+        .loading-text { font-size: 4rem; }
+        .loading-image { height: 300px; width: 250px; }
         
-        <VelocityText baseVelocity={2}>
-          <img src="/assets/model_necklace_1785599375851.png" alt="Necklace Model" style={{ height: '300px', width: '250px', objectFit: 'cover', borderRadius: '4px' }} />
-          <span style={{ fontSize: '4rem', fontFamily: 'serif', color: 'var(--text-primary)' }}>Bridal Collection</span>
-          <img src="/assets/model_earrings_1785599388070.png" alt="Earrings Model" style={{ height: '300px', width: '250px', objectFit: 'cover', borderRadius: '4px' }} />
-          <span style={{ fontSize: '4rem', fontFamily: 'serif', color: 'var(--kalyan-gold)' }}>Exquisite Craftsmanship</span>
-        </VelocityText>
-      </div>
-    </motion.div>
+        .loading-logo-container { top: 1rem; }
+        .loading-logo-img-wrapper { height: 48px; margin-top: 8px; margin-right: -32px; }
+        .loading-logo-img { height: 95px; }
+        .loading-logo-title { font-size: 3rem; }
+        .loading-logo-subtitle { font-size: 1rem; margin-top: 10px; }
+        
+        @media (max-width: 768px) {
+          .loading-text { font-size: 2.2rem; }
+          .loading-image { height: 180px; width: 150px; }
+          
+          .loading-logo-container { top: 2rem; }
+          .loading-logo-img-wrapper { height: 32px; margin-top: 5px; margin-right: -22px; }
+          .loading-logo-img { height: 65px; }
+          .loading-logo-title { font-size: 1.8rem; }
+          .loading-logo-subtitle { font-size: 0.7rem; margin-top: 6px; }
+        }
+      `}</style>
+      <motion.div 
+        initial={{ opacity: 1 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        style={{
+          position: 'fixed', inset: 0, zIndex: 9999, background: 'var(--bg-primary)',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+          pointerEvents: isVisible ? 'auto' : 'none'
+        }}
+      >
+        <div className="loading-logo-container" style={{ position: 'absolute', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '0' }}>
+          <div className="loading-logo-img-wrapper" style={{ overflow: 'hidden', display: 'flex', alignItems: 'flex-start', zIndex: 2 }}>
+            <img className="loading-logo-img" src="/logo.png" alt="Kalyan Jewellers Logo" style={{ objectFit: 'contain', objectPosition: 'top' }} />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', zIndex: 1 }}>
+            <h1 className="font-serif loading-logo-title" style={{ fontWeight: 'bold', color: 'var(--kalyan-red)', letterSpacing: '3px', margin: 0, lineHeight: 1 }}>KALYAN</h1>
+            <span className="loading-logo-subtitle" style={{ color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '4px', fontWeight: 600 }}>Jewellers</span>
+          </div>
+        </div>
+
+        {/* Loading Indicator at Bottom */}
+        <div style={{ position: 'absolute', bottom: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', zIndex: 10 }}>
+          <motion.div 
+            animate={{ rotate: 360 }} 
+            transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+            style={{ width: '32px', height: '32px', border: '3px solid rgba(139,0,0,0.2)', borderTop: '3px solid var(--kalyan-red)', borderRadius: '50%' }}
+          />
+          <span style={{ fontFamily: 'serif', fontSize: '1rem', color: 'var(--kalyan-red)', letterSpacing: '2px', textTransform: 'uppercase' }}>Loading Experience...</span>
+        </div>
+
+        <div style={{ width: '100vw', overflow: 'hidden', padding: '2rem 0', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <VelocityText baseVelocity={-2}>
+            <span className="loading-text" style={{ fontFamily: 'serif', color: 'var(--kalyan-gold)', fontStyle: 'italic' }}>Curated Masterpieces</span>
+            <img className="loading-image" src="/assets/model_bridal_1785599341489.png" alt="Bridal Model" style={{ objectFit: 'cover', borderRadius: '4px' }} />
+            <span className="loading-text" style={{ fontFamily: 'serif', color: 'var(--kalyan-red)' }}>A Legacy of Trust</span>
+            <img className="loading-image" src="/assets/model_saree_1785599364258.png" alt="Saree Model" style={{ objectFit: 'cover', borderRadius: '4px' }} />
+          </VelocityText>
+          
+          <VelocityText baseVelocity={2}>
+            <img className="loading-image" src="/assets/model_necklace_1785599375851.png" alt="Necklace Model" style={{ objectFit: 'cover', borderRadius: '4px' }} />
+            <span className="loading-text" style={{ fontFamily: 'serif', color: 'var(--text-primary)' }}>Bridal Collection</span>
+            <img className="loading-image" src="/assets/model_earrings_1785599388070.png" alt="Earrings Model" style={{ objectFit: 'cover', borderRadius: '4px' }} />
+            <span className="loading-text" style={{ fontFamily: 'serif', color: 'var(--kalyan-gold)' }}>Exquisite Craftsmanship</span>
+          </VelocityText>
+        </div>
+      </motion.div>
+    </>
   );
 }

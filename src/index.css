@@ -145,7 +145,7 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 
 /* Product Cards */
 .product-image-container { height: 350px; position: relative; overflow: hidden; background: #fff; }
-.product-info { padding: 2rem; text-align: center; background: #fff; }
+.product-info { padding: 2rem; text-align: center; background: #fff; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
 .product-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); }
 .product-price { color: var(--kalyan-red); font-size: 1.2rem; font-weight: 500; letter-spacing: 1px; }
 

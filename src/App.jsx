@@ -358,10 +358,11 @@ function App() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
+                  style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
                   <TiltCard 
                     className="glass"
-                    style={{ position: 'relative', cursor: 'pointer', borderRadius: 0, overflow: 'hidden' }}
+                    style={{ position: 'relative', cursor: 'pointer', borderRadius: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', flexGrow: 1, height: '100%' }}
                     whileHover="hover"
                     initial="initial"
                   >
